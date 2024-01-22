@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather App</title>
+  </head>
+  <body
+    style="
+      background-image: url('https://images.unsplash.com/photo-1570483358100-6d222cdea6ff?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNreXxlbnwwfHwwfHx8MA%3D%3D');
+    "
+  >
+    <!-- Navbar Starts Here -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand"
+          href="#"
+          style="font-family: 'Lobster', sans-serif"
+        >
+          <img
+            style="height: 50px; border-radius: 10px; margin-right: 20px"
+            src="https://img.freepik.com/premium-vector/glassmorphism-cloud-rain_621127-32.jpg?size=626&ext=jpg&ga=GA1.1.204250632.1701491658&semt=ais"
+            alt=""
+          />Weather App</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"></li>
+            <li class="nav-item"></li>
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Bangalore</a></li>
+                  <li><a class="dropdown-item" href="#">Delhi</a></li>
+                  <li><a class="dropdown-item href="#">Chandigarh</a></li>
+                  <li><a class="dropdown-item" href="#">Kolkata</a></li>
+                </ul>
+              </li> -->
+            <li class="nav-item">
+              <!-- <a class="nav-link active" aria-current="page" href="#">Usage Guide</a> -->
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              id="city_inp"
+              class="form-control me-2"
+              type="search"
+              placeholder="Enter City Name"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit" id="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar Ends Here -->
+
+    <div class="container">
+      <h1 class="my-4 text-center" id="main_heading">Weather for Delhi</h1>
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Temperature Info</h4>
+              </div>
+              <div
+                class="card-body"
+                style="
+                  background-image: url('https://plus.unsplash.com/premium_photo-1668351277191-9df852eb657f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2xvdWRzfGVufDB8fDB8fHww');
+                "
+              >
+                <h1 class="card-title pricing-card-title">
+                  <span id="temperature"></span><span>&#x2103;</span>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>
+                    <strong>Minimum Temperature is</strong>
+                    <span id="min_temp"></span>
+                  </li>
+                  <li>
+                    <strong>Maximum Temperature is</strong>
+                    <span id="max_temp"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Humidity Info</h4>
+              </div>
+              <div
+                class="card-body"
+                style="
+                  background-image: url('https://plus.unsplash.com/premium_photo-1664304423623-4f9d5ed90b4f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHNreXxlbnwwfHwwfHx8MA%3D%3D');
+                "
+              >
+                <h1 class="card-title pricing-card-title">
+                  <span id="humidity"></span>%
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>
+                    <strong>Wind Degrees is</strong>
+                    <span id="wind_degrees"></span>
+                  </li>
+                  <li>
+                    <strong>Feel Like is</strong> <span id="feels_like"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Wind Speed</h4>
+              </div>
+
+              <div
+                class="card-body"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D');
+                "
+              >
+                <h1 class="card-title pricing-card-title">
+                  <span id="wind_speed"></span> Km/hr
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>
+                    <strong>Sunrise Time is</strong> <span id="sunrise"></span>
+                  </li>
+                  <li>
+                    <strong>Sunset Time is</strong> <span id="sunset"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="display-6 text-center mb-4">Cities Weather</h2>
+
+        <div
+          class="table-responsive"
+          style="width: fit-content; border-radius: 20px"
+        >
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 34%"></th>
+                <th style="width: 22%; font-family: 'Nanum Myeongjo', serif">
+                  Temperature <span>&#x2103;</span>
+                </th>
+                <th style="width: 22%; font-family: 'Nanum Myeongjo', serif">
+                  Humidity %
+                </th>
+                <th style="width: 22%; font-family: 'Nanum Myeongjo', serif">
+                  Wind Speed (Km/hr)
+                </th>
+                <th style="width: 22%; font-family: 'Nanum Myeongjo', serif">
+                  Feels_like
+                </th>
+                <th style="width: 22%; font-family: 'Nanum Myeongjo', serif">
+                  Min_temp <span>&#x2103;</span>
+                </th>
+                <th style="width: 22%; font-family: 'Nanum Myeongjo', serif">
+                  Max_temp <span>&#x2103;</span>
+                </th>
+                <th style="width: 22%; font-family: 'Nanum Myeongjo', serif">
+                  Wind_degrees Km/hr
+                </th>
+                <th style="width: 22%; font-family: 'Nanum Myeongjo', serif">
+                  Sunrise (Hr:Min:Sec)
+                </th>
+                <th style="width: 22%; font-family: 'Nanum Myeongjo', serif">
+                  Sunset (Hr:Min:Sec)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Chennai</th>
+                <td><span id="c_temp"></span></td>
+                <td><span id="c_humidity"></span></td>
+                <td><span id="c_ws"></span></td>
+                <td><span id="c_feels_like"></span></td>
+                <td><span id="c_min_temp"></span></td>
+                <td><span id="c_max_temp"></span></td>
+                <td><span id="c_wind_deg"></span></td>
+                <td><span id="c_sunrise"></span></td>
+                <td><span id="c_sunset"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Goa</th>
+                <td><span id="g_temp"></span></td>
+                <td><span id="g_humidity"></span></td>
+                <td><span id="g_ws"></span></td>
+
+                <td><span id="g_feels_like"></span></td>
+                <td><span id="g_min_temp"></span></td>
+                <td><span id="g_max_temp"></span></td>
+                <td><span id="g_wind_deg"></span></td>
+                <td><span id="g_sunrise"></span></td>
+                <td><span id="g_sunset"></span></td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Mumbai</th>
+                <td><span id="m_temp"></span></td>
+                <td><span id="m_humidity"></span></td>
+                <td><span id="m_ws"></span></td>
+
+                <td><span id="m_feels_like"></span></td>
+                <td><span id="m_min_temp"></span></td>
+                <td><span id="m_max_temp"></span></td>
+                <td><span id="m_wind_deg"></span></td>
+                <td><span id="m_sunrise"></span></td>
+                <td><span id="m_sunset"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Mysore</th>
+                <td><span id="my_temp"></span></td>
+                <td><span id="my_humidity"></span></td>
+                <td><span id="my_ws"></span></td>
+
+                <td><span id="my_feels_like"></span></td>
+                <td><span id="my_min_temp"></span></td>
+                <td><span id="my_max_temp"></span></td>
+                <td><span id="my_wind_deg"></span></td>
+                <td><span id="my_sunrise"></span></td>
+                <td><span id="my_sunset"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Waynand</th>
+                <td><span id="r_temp"></span></td>
+                <td><span id="r_humidity"></span></td>
+                <td><span id="r_ws"></span></td>
+
+                <td><span id="r_feels_like"></span></td>
+                <td><span id="r_min_temp"></span></td>
+                <td><span id="r_max_temp"></span></td>
+                <td><span id="r_wind_deg"></span></td>
+                <td><span id="r_sunrise"></span></td>
+                <td><span id="r_sunset"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Hyderabad</th>
+                <td><span id="h_temp"></span></td>
+                <td><span id="h_humidity"></span></td>
+                <td><span id="h_ws"></span></td>
+
+                <td><span id="h_feels_like"></span></td>
+                <td><span id="h_min_temp"></span></td>
+                <td><span id="h_max_temp"></span></td>
+                <td><span id="h_wind_deg"></span></td>
+                <td><span id="h_sunrise"></span></td>
+                <td><span id="h_sunset"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
